@@ -43,15 +43,12 @@ def gff2dict(fn):
         _id = None
         _parents = None
         locus_tag = None
+        
 
         if "ID" in _attrs:
             _id = _attrs["ID"]
         if "Parent" in _attrs:
             _parents = _attrs["Parent"]
-        if "locus_tag" in _attrs:
-            locus_tag = _attrs["locus_tag"]
-            _id = locus_tag
-            _parents = locus_tag
 
         if _type == "gene":
             if not _id:
